@@ -46,11 +46,18 @@ function shuffle(array) {
 function clearBoard() {
   let shuffledArray = shuffle(cardArray);
   for (var i = 0; i < cardArray.length; i++) {
-    const cardElement = document.createElement('i');
-    cardElement[i].classList.add('fas', shuffledArray[i]);
-    deck.appendChild(cardElement);
-    }
+    const cardItem = document.createElement('li')
+    cardItem.classList.add('card');
+
+    const cardImg = document.createElement('i');
+    cardImg.classList.add(shuffledArray[i]);
+    cardItem.appendChild(cardImg);
+
+    })
+   }
+  deck.appendChild(cardItem);
 }
+
 
 
 function displayCard(selectCard){
