@@ -42,18 +42,15 @@ function shuffle(array) {
 
     return array;
 }
-
+/* clear the gameboard and set-up randomly shuffled cards */
 function clearBoard() {
   let shuffledArray = shuffle(cardArray);
   for (var i = 0; i < cardArray.length; i++) {
     const cardItem = document.createElement('li')
     cardItem.classList.add('card');
-
     const cardImg = document.createElement('i');
     cardImg.classList.add(shuffledArray[i]);
     cardItem.appendChild(cardImg);
-
-    })
    }
   deck.appendChild(cardItem);
 }
