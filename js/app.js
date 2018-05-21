@@ -19,7 +19,10 @@
  	 'fa-bicycle',
  	 'fa-bicycle'];
 
-const deck = document.querySelector('.deck');
+/* set variables */
+const newDeck = document.querySelector('.deck');
+const timer = document.querySelector('.timer');
+const moves = document.querySelector('.moves');
 
 /*
  * Display the cards on the page
@@ -42,26 +45,29 @@ function shuffle(array) {
 
     return array;
 }
-/* clear the gameboard and set-up randomly shuffled cards */
+const shuffledCards = shuffle(cardArray)
+
 function clearBoard() {
-  let shuffledArray = shuffle(cardArray);
-  for (var i = 0; i < cardArray.length; i++) {
-    const cardItem = document.createElement('li')
-    cardItem.classList.add('card');
+
+  for (var i = 0; i <cardArray.length; i++){
+    const card = document.createElement('li');
+    card.classList.add('card');
     const cardImg = document.createElement('i');
-    cardImg.classList.add(shuffledArray[i]);
-    cardItem.appendChild(cardImg);
-   }
-  deck.appendChild(cardItem);
+    cardImg.classList.add('fa', shuffledCards[i]);
+    card.appendChild(cardImg);
+    card.addEventListener("click", displayCard);
+    newDeck.appendChild(card);
+
+  }
 }
 
 
-
-function displayCard(selectCard){
-  selectCard.classList.add("open");
-  selectCard.classList.add("show");
-  selectCard.classList.add("disabled");
+var displayCard = function(){
+  this.classList.toggle('open');
+  this.classList.toggle('show');
+  this.classList.toggle('disabled');
 }
+
 
 
 /*
