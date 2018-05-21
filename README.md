@@ -11,7 +11,7 @@ The starter project has some HTML and CSS styling to display a static version of
 
 To get started, open `js/app.js` and start building out the app's functionality
 
-**Memory Game Logic
+**Memory Game Logic**
 
 The game randomly shuffles the cards. A user wins once all cards have successfully been matched.
 
