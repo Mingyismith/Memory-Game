@@ -49,25 +49,29 @@ const shuffledCards = shuffle(cardArray)
 
 function clearBoard() {
 
-  for (var i = 0; i <cardArray.length; i++){
+  for (let i = 0; i <cardArray.length; i++){
     const card = document.createElement('li');
     card.classList.add('card');
     const cardImg = document.createElement('i');
     cardImg.classList.add('fa', shuffledCards[i]);
     card.appendChild(cardImg);
-    card.addEventListener("click", displayCard);
     newDeck.appendChild(card);
 
   }
 }
+  newDeck.addEventListener ('click', function(e){
+    if (e.target && e.target.nodeName == "LI"){
+      console.log("a card is clicked!")
+    }
+  })
 
 
-var displayCard = function(){
-  this.classList.toggle('open');
-  this.classList.toggle('show');
-  this.classList.toggle('disabled');
-}
 
+  var displayCard = function(){
+    this.classList.toggle('open');
+    this.classList.toggle('show');
+    this.classList.toggle('disabled');
+}  
 
 
 /*
