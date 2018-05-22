@@ -86,11 +86,11 @@ function clearBoard() {
       matchedCards.push(openCards[0]);
       openCards=[];
     }
- else if (openCards[0].innerHTML !== openCards[1].innerHTML) {
+/* else if (openCards[0].innerHTML !== openCards[1].innerHTML) {
         openCards[0].classList.remove('show','open');
          openCards[1].classList.remove('show','open');
          openCards=[];
-       }
+       } */
 }
 /*
  * set up the event listener for a card. If a card is clicked:
