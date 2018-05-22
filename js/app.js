@@ -75,7 +75,6 @@ function clearBoard() {
     }
 
 
-
   function matchCards() {
   if (openCards[0].innerHTML === openCards[1].innerHTML) {
      console.log ("it's a match")
@@ -87,7 +86,12 @@ function clearBoard() {
       matchedCards.push(openCards[0]);
       openCards=[];
     }
-
+ else if (openCards[0].innerHTML !== openCards[1].innerHTML) {
+        openCards[0].classList.remove('show','open');
+         openCards[1].classList.remove('show','open');
+         openCards=[];
+       }
+}
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
