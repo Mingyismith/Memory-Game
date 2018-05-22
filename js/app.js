@@ -23,6 +23,8 @@
 const newDeck = document.querySelector('.deck');
 const timer = document.querySelector('.timer');
 const moves = document.querySelector('.moves');
+const openCards = [];
+const matchedCards = [];
 
 /*
  * Display the cards on the page
@@ -59,20 +61,32 @@ function clearBoard() {
 
   }
 }
-  newDeck.addEventListener ('click', function(e){
-    if (e.target && e.target.nodeName == "LI"){
-      console.log("a card is clicked!")
+
+/* apply event listener to the newly shuffled deck */
+  newDeck.addEventListener ('click', flipCard);
+
+/* apply the flipCard functionality to individual cards using event delegation */
+  function flipCard(event){
+    if (openCards.length < 2  ) {
+      event.target.classList.add('open','show');
+      openCards.push(event.target);
+      matchCards();
+      }
     }
-  })
 
 
 
-  var displayCard = function(){
-    this.classList.toggle('open');
-    this.classList.toggle('show');
-    this.classList.toggle('disabled');
-}  
-
+  function matchCards() {
+  if (openCards[0].innerHTML === openCards[1].innerHTML) {
+     console.log ("it's a match")
+      openCards[0].classList.add('match');
+      openCards[1].classList.add('match');
+      openCards[0].classList.remove('show','open');
+      openCards[1].classList.remove('show','open');
+      matchedCards.push(openCards[0]);
+      matchedCards.push(openCards[0]);
+      openCards=[];
+    }
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -85,32 +99,3 @@ function clearBoard() {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
-
- /* add event listener for each card
- function flipCards() {
- for (var i=0; i<cardArray.length; i++){
- cardArray[i].addEventListener('click',matchCards{
-
-   })
-
-
-
- let flippedCards = [];
- function matchCards (){
-
-   if (flippedCards[0] !== "" && flippedCards[1] !==""{
-     if (flippedCards[0].innerHTML === flippedCards[1].innerHTML){
-         flippedCards[0].classList.add("match");
-         flippedCards.push(this);
-         flippedCards[1].classList.add("match");
-          flippedCards.push(this);
-     else {
-       flippedCards[0].classList.remove("show", "open");
-       flippedCards[1].classList.remove("show", "open");
-       flippedCards[0].classList.add("mismatched");
-       flippedCards[1].classList.add("mismatched");
-     }
-
-     }
-
-*/
