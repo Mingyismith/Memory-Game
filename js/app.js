@@ -1,30 +1,29 @@
-/*
- * Create a list that holds all of your cards
- */
- const cardArray = [
-   'fa-diamond',
-   'fa-diamond',
- 	 'fa-paper-plane-o',
- 	 'fa-paper-plane-o',
- 	 'fa-anchor',
- 	 'fa-anchor',
- 	 'fa-bolt',
- 	 'fa-bolt',
- 	 'fa-cube',
- 	 'fa-cube',
- 	 'fa-bomb',
- 	 'fa-bomb',
- 	 'fa-leaf',
- 	 'fa-leaf',
- 	 'fa-bicycle',
- 	 'fa-bicycle'];
 
-/* set variables */
-const newDeck = document.querySelector('.deck');
-const timer = document.querySelector('.timer');
-const moves = document.querySelector('.moves');
-const openCards = [];
-const matchedCards = [];
+ const cardArray = [
+    'diamond',
+    'diamond',
+  	 'paper-plane-o',
+  	 'paper-plane-o',
+  	 'anchor',
+  	 'anchor',
+  	 'bolt',
+  	 'bolt',
+  	 'cube',
+  	 'cube',
+  	 'bomb',
+  	 'bomb',
+  	 'leaf',
+  	 'leaf',
+  	 'bicycle',
+  	 'bicycle'];
+
+ /* set variables */
+ const newDeck = document.querySelector('.deck');
+ const timer = document.querySelector('.timer');
+ const moves = document.querySelector('.moves');
+ const openCards = [];
+ const matchedCards = [];
+
 
 /*
  * Display the cards on the page
@@ -47,6 +46,7 @@ function shuffle(array) {
 
     return array;
 }
+
 const shuffledCards = shuffle(cardArray)
 
 function clearBoard() {
@@ -55,7 +55,8 @@ function clearBoard() {
     const card = document.createElement('li');
     card.classList.add('card');
     const cardImg = document.createElement('i');
-    cardImg.classList.add('fa', shuffledCards[i]);
+    cardImg.classList.add('fa', 'fa-' + shuffledCards[i]);
+    cardImg.setAttribute('type',shuffledCards[i]);
     card.appendChild(cardImg);
     newDeck.appendChild(card);
 
@@ -63,11 +64,11 @@ function clearBoard() {
 }
 
 /* apply event listener to the newly shuffled deck */
-  newDeck.addEventListener ('click', flipCard);
+newDeck.addEventListener ('click', flipCard);
 
 /* apply the flipCard functionality to individual cards using event delegation */
   function flipCard(event){
-    if (openCards.length < 2  ) {
+    if (openCards.length < 3  ) {
       event.target.classList.add('open','show');
       openCards.push(event.target);
       matchCards();
@@ -76,22 +77,29 @@ function clearBoard() {
 
 
   function matchCards() {
-  if (openCards[0].innerHTML === openCards[1].innerHTML) {
-     console.log ("it's a match")
-      openCards[0].classList.add('match');
-      openCards[1].classList.add('match');
-      openCards[0].classList.remove('show','open');
-      openCards[1].classList.remove('show','open');
-      matchedCards.push(openCards[0]);
-      matchedCards.push(openCards[0]);
-      openCards=[];
-    }
-else if (openCards[0].innerHTML !== openCards[1].innerHTML) {
-        openCards[0].classList.remove('show','open');
-         openCards[1].classList.remove('show','open');
-         openCards=[];
-       } 
-}
+  if (openCards[0].querySelector('i').classList.value === openCards[1].querySelector('i').classList.value) {
+      cardsDoMatch();
+      }
+  else cardsNotMatch();
+  }
+
+
+  function cardsDoMatch(){
+    openCards[0].classList.add('match');openCards.splice(0,2);
+    openCards[1].classList.add('match');
+    openCards[0].classList.remove('show','open');
+    openCards[1].classList.remove('show','open');
+    matchedCards.push(openCards[0]);
+    matchedCards.push(openCards[0]);
+    openCards.splice(0,2);
+  }
+
+  function cardsNotMatch(){
+    openCards[0].classList.remove('show','open');
+    openCards[1].classList.remove('show','open');
+    openCards.splice(0,2);
+  }
+
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
