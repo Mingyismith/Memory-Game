@@ -63,29 +63,53 @@ function clearBoard() {
   }
 }
 
-/* apply event listener to the newly shuffled deck */
-newDeck.addEventListener ('click', flipCard);
+/* convert HTML collection into an array */
+const allCards = Array.from(newDeck.children);
+
+/* apply event listener to each of the card and show the cards*/
+
+allCards.forEach(function(card){
+  card.addEventListener('click',function(e){
+    openCards.push(card);
+    card.classList.add('open','show');
+    cardsNotMatch();
+
+
+  });
+});
+
+
+function cardsNotMatch(){
+  if (openCards.length === 2){
+    setTimeout(function(){
+      allCards.forEach(function(card){
+        card.classList.remove('open', 'show');
+      })
+    openCards.splice(0,2);
+    }, 1000);
+  }
+}
+/*newDeck.addEventListener ('click', flipCard);*/
 
 /* apply the flipCard functionality to individual cards using event delegation */
-  function flipCard(event){
-    if (openCards.length < 3  ) {
+/*  function flipCard(event){
       event.target.classList.add('open','show');
       openCards.push(event.target);
-      matchCards();
-      }
-    }
+    }*/
 
 
+/*
   function matchCards() {
-  if (openCards[0].querySelector('i').classList.value === openCards[1].querySelector('i').classList.value) {
-      cardsDoMatch();
-      }
-  else cardsNotMatch();
-  }
 
+  if (openCards[0].querySelector('i').classList.value !== openCards[1].querySelector('i').classList.value) {
+      cardsNotMatch();
+    } */
+  /*else cardsNotMatch();
+} */
 
+/*
   function cardsDoMatch(){
-    openCards[0].classList.add('match');openCards.splice(0,2);
+    openCards[0].classList.add('match');
     openCards[1].classList.add('match');
     openCards[0].classList.remove('show','open');
     openCards[1].classList.remove('show','open');
@@ -93,13 +117,6 @@ newDeck.addEventListener ('click', flipCard);
     matchedCards.push(openCards[0]);
     openCards.splice(0,2);
   }
-
-  function cardsNotMatch(){
-    openCards[0].classList.remove('show','open');
-    openCards[1].classList.remove('show','open');
-    openCards.splice(0,2);
-  }
-
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
@@ -110,4 +127,3 @@ newDeck.addEventListener ('click', flipCard);
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
