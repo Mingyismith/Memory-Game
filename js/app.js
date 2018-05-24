@@ -1,5 +1,4 @@
-
- const cardArray = [
+const cardArray = [
     'diamond',
     'diamond',
   	 'paper-plane-o',
@@ -64,48 +63,35 @@ function clearBoard() {
 }
 
 /* convert HTML collection into an array */
-const allCards = Array.from(newDeck.children);
-
-/* apply event listener to each of the card and show the cards*/
-
-allCards.forEach(function(card){
-  card.addEventListener('click',function(e){
-    openCards.push(card);
-    card.classList.add('open','show');
-    cardsNotMatch();
 
 
-  });
-});
+/*apply event listener to each of the card and show the cards*/
+
+  newDeck.addEventListener('click',function(event){
+    openCards.push(event.target);
+    event.target.classList.add('open','show');
+    matchCards();
+
+    });
 
 
-function cardsNotMatch(){
-  if (openCards.length === 2){
-    setTimeout(function(){
-      allCards.forEach(function(card){
-        card.classList.remove('open', 'show');
-      })
-    openCards.splice(0,2);
-    }, 1000);
-  }
-}
-/*newDeck.addEventListener ('click', flipCard);*/
 
-/* apply the flipCard functionality to individual cards using event delegation */
-/*  function flipCard(event){
-      event.target.classList.add('open','show');
-      openCards.push(event.target);
-    }*/
-
-
-/*
   function matchCards() {
 
-  if (openCards[0].querySelector('i').classList.value !== openCards[1].querySelector('i').classList.value) {
+    if (openCards[0].children[0].className !== openCards[1].children[0].className) {
       cardsNotMatch();
-    } */
-  /*else cardsNotMatch();
-} */
+      }
+    };
+
+
+  function cardsNotMatch(){
+    setTimeout(function(){
+        openCards[0].classList.remove('open','show');
+        openCards[1].classList.remove('open','show');
+
+      }, 1000);
+
+  };
 
 /*
   function cardsDoMatch(){
@@ -117,6 +103,7 @@ function cardsNotMatch(){
     matchedCards.push(openCards[0]);
     openCards.splice(0,2);
   }
+*/
 /*
  * set up the event listener for a card. If a card is clicked:
  *  - display the card's symbol (put this functionality in another function that you call from this one)
