@@ -58,9 +58,12 @@ startTimer();
 * add event listener to each card to display icons when clicking on each card 
 * based on the two cards shown, call in other functions (cardsDoMatch or cardsNotMatch) to check if the cards match
 * add number of matched cards to MatchCards to help with ending the game  
+* setup is based on the Udacity Coach Mike Wales Live webinar on 5/23: https://www.youtube.com/watch?v=_rUH-sEs68Y 
+* setup referenced sandraisrael's github repo: https://github.com/sandraisrael/Memory-Game-fend
 */
 
 /* add event listener to each card to display the icons and examine whether the cards match or not by calling other functions*/
+
 cards.forEach(function(card){
      card.addEventListener('click', function(e){
 
