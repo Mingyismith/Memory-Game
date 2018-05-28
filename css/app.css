@@ -127,15 +127,16 @@ h1 {
 
 /* Modal Content */
 .modal-content {
+  color:#66ffcc;
   font-size: 1.5em;
   text-align: center;
-  background-color: #fefefe;
+  background-color: #000000;
   margin-top:200px;
   margin-left: auto;
   margin-right:auto;
   padding: 40px;
-  border: 10px double #000000;
-  width: 50%;
+  border: 10px double #ffff80;
+  width: 70%;
 }
 
 /* The Close Button */
@@ -148,7 +149,22 @@ h1 {
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: #000000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.button{
+      background-color: #aaaaaa;;
+      border: none;
+      color: #000000;
+      padding: 10px 24px;
+      border-radius:6px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+
 }
