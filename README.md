@@ -5,6 +5,7 @@
 Given a starter project with some HTML and CSS styles, I had to convert this game from a static project to an interactive game by adding some javascript logic and modifying the HTML and CSS files.
 
 **How to play the game**
+
 https://rawgit.com/Mingyismith/Memory-Game/master/index.html
 - Click on a card
 - Keep flipping each card and try to remember where other matching card might be if the two opened cards do not match.
