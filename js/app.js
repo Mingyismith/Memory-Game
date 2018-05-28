@@ -174,6 +174,7 @@ function startTimer() {
 
 /* reset the game either through the modal window or hitting the restar button */
 function resetGame(){
+  initGame();
   modal.style.display = "none";
   for (let i = 0; i<stars.length ; i++){
     stars[i].style.visibility = "visible";
