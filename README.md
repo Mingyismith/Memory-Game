@@ -21,6 +21,6 @@ https://rawgit.com/Mingyismith/Memory-Game/master/index.html
 - Finally, I added the restart game logic with either using the restart button in the popup window or the restart icon on top of the game board. 
 
 ## Starter Code
-The original starter code was pulled from the Udacity Memory Game repository.  https://github.com/udacity/fend-project-memory-game
-Font Awesome" icons used in this game are licensed under CC BY 4.0 License. https://fontawesome.com/icons?d=gallery&m=free
+- The original starter code was pulled from the Udacity Memory Game repository.  https://github.com/udacity/fend-project-memory-game
+- Font Awesome" icons used in this game are licensed under CC BY 4.0 License. https://fontawesome.com/icons?d=gallery&m=free
 
