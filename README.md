@@ -1,46 +1,24 @@
-# Memory Game Project
+# Memory Game Project - Udacity FEND Project 2
 
-## Table of Contents
+## Assignment Instruction
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+Given a starter project with some HTML and CSS styles, I had to convert this game from a static project to an interactive game by adding some javascript logic and modifying the HTML and CSS files.
 
-## Instructions
+**How to play the game**
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+- Click on a card
+- Keep flipping each card and try to remember where other matching card might be if the two opened cards do not match.
+- Match similar cards and try to complete the game as fast you can. 
+- If unhappy with how your game has been, click on the restart icon and start over.
+- If you win the game, click on the play again button to start over.
 
-To get started, open `js/app.js` and start building out the app's functionality
+**How I build the game**
 
-**Memory Game Logic**
+- I applied the shuffle function provided in the starter code to shuffle the icons from the HTML file.
+- For flipping and matching cards, I followed the set-up the project Coach Mike Wales went through and simplified it by calling functions that will apply steps when cards match or don't match.
+- When all the cards match, I created a modal popup window to show the congrualations message and the players' game time, star rating, and the number of moves. 
+- Finally, I added the restart game logic with either using the restart button in the popup window or the restart icon on top of the game board. 
 
-The game randomly shuffles the cards. A user wins once all cards have successfully been matched.
+## Starter Code
+The original starter code was pulled from the Udacity Memory Game repository.  https://github.com/udacity/fend-project-memory-game
 
-**Congratulations Popup**
-
-When a user wins the game, a modal appears to congratulate the player and ask if they want to play again. It should also tell the user how much time it took to win the game, and what the star rating was.
-
-**Restart Button**
-
-A restart button allows the player to reset the game board, the timer, and the star rating.
-
-**Star Rating**
-
-The game displays a star rating (from 1 to at least 3) that reflects the player's performance. At the beginning of a game, it should display at least 3 stars. After some number of moves, it should change to a lower star rating. After a few more moves, it should change to a even lower star rating (down to 1).
-
-The number of moves needed to change the rating is up to you, but it should happen at some point.
-
-**Timer**
-
-When the player starts a game, a displayed timer should also start. Once the player wins the game, the timer stops.
-
-**Move Counter**
-
-Game displays the current number of moves a user has made.
-
-
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
