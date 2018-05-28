@@ -21,4 +21,5 @@ Given a starter project with some HTML and CSS styles, I had to convert this gam
 
 ## Starter Code
 The original starter code was pulled from the Udacity Memory Game repository.  https://github.com/udacity/fend-project-memory-game
+Font Awesome" icons used in this game are licensed under CC BY 4.0 License. https://fontawesome.com/icons?d=gallery&m=free
 
