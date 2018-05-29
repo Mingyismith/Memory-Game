@@ -144,18 +144,15 @@ function starRating(){
   moves ++;
   moveCount= moves;
   starCount = 3
-    if (moves > 6 && moves < 10){
+    if (moves > 12 && moves < 25){
       stars[2].style.visibility = 'hidden';
       starCount = 2
     }
-    if (moves >= 10 && moves <15) {
+    if (moves >= 25) {
       stars[1].style.visibility = 'hidden';
       starCount = 1
     }
-    if (moves >= 15) {
-      stars[0].style.visibility = "hidden";
-      starCount = 1
-    }
+    
 }
 
 
