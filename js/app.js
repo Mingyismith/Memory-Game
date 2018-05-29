@@ -55,15 +55,13 @@ startTimer();
 
 
 /* Start playing the matching Game
-* add event listener to each card to display icons when clicking on each card 
+* add event listener to each card to display icons when clicking on each card
 * based on the two cards shown, call in other functions (cardsDoMatch or cardsNotMatch) to check if the cards match
-* add number of matched cards to MatchCards to help with ending the game  
-* setup is based on the Udacity Coach Mike Wales Live webinar on 5/23: https://www.youtube.com/watch?v=_rUH-sEs68Y 
-* setup referenced sandraisrael's github repo: https://github.com/sandraisrael/Memory-Game-fend
+* add number of matched cards to MatchCards to help with ending the game
 */
 
 /* add event listener to each card to display the icons and examine whether the cards match or not by calling other functions*/
-
+/* setup is based on the Udacity Coach Mike Wales Live webinar on 5/23, https://www.youtube.com/watch?v=_rUH-sEs68Y */
 cards.forEach(function(card){
      card.addEventListener('click', function(e){
 
@@ -113,7 +111,7 @@ function cardsNotMatch(){
     },500);
   }
 
-/*  If all 16 cards match, the game ends and a popup window show the congruations message */ 
+/*  If all 16 cards match, the game ends and a popup window show the congruations message */
 function endGame(){
   clearInterval(interval); /* stop timer */
   let endTime = timer.innerHTML;
@@ -134,7 +132,7 @@ function endGame(){
 
 
 
-/* Additional functionalities to keep track of the game progress 
+/* Additional functionalities to keep track of the game progress
 * Number of moves made with each pairing
 * Number of stars display decreases as game progress
 * Timer
@@ -191,7 +189,5 @@ function resetGame(){
 
 /* reset Game with restart button*/
 reset.onclick = function() {
-  resetGame(); 
+  resetGame();
 }
-
-  
