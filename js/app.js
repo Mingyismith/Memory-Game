@@ -1,4 +1,4 @@
-let deck = document.querySelector(".deck");
+let cardDeck = document.querySelector(".deck");
 let card = document.querySelectorAll(".card");
 let cards = [...card];
 let moveCount = document.querySelector('.moves').innerHTML;
@@ -40,9 +40,9 @@ function initGame() {
   //shuffle deck
   let shuffledCards = shuffle(cards);
   for (let i = 0; i < cards.length; i++) {
-    deck.innerHTML = "";
+    cardDeck.innerHTML = "";
     for (let card of cards){
-      deck.appendChild(card);
+      cardDeck.appendChild(card);
 
     }
   }
