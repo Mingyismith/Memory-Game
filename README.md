@@ -6,7 +6,6 @@ Given a starter project with some HTML and CSS styles, I had to convert this gam
 
 **How to play the game**
 
-https://rawgit.com/Mingyismith/Memory-Game/master/index.html
 - Click on a card
 - Keep flipping each card and try to remember where other matching card might be if the two opened cards do not match.
 - Match similar cards and try to complete the game as fast you can. 
