@@ -14,10 +14,12 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    color: #ffffff;
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #000000; /* Background pattern from Subtle Patterns */
+
 }
 
 .container {
@@ -30,6 +32,8 @@ body {
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    color:#FCBB00;
+
 }
 
 /*
@@ -39,7 +43,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(160deg, #f7f79b 0%, #fc8b5a 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -53,7 +57,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #2e3d49;
+    background: #a69188;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -66,7 +70,7 @@ h1 {
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: #5085ff;
     cursor: default;
 }
 
@@ -76,7 +80,7 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #f35768;
     font-size: 33px;
 }
 
@@ -85,6 +89,7 @@ h1 {
  */
 
 .score-panel {
+    color:#42f4d1;
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
@@ -153,7 +158,7 @@ h1 {
     cursor: pointer;
 }
 
-/* game re-start button */
+/*re-start button */
 .button{
       background-color: #aaaaaa;;
       border: none;
@@ -167,4 +172,64 @@ h1 {
       margin: 4px 2px;
       cursor: pointer;
 
+}
+
+/* responsiveness */
+
+@media screen and (max-width: 349px) {
+
+  .deck {
+      width: 60%;
+      justify-content: space-around;
+    }
+
+  .deck .card{
+    height = 5em;
+    width = 5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .score-panel {
+      text-align: center;
+      width: 300px;
+      margin-bottom: 10px;
+  }
+
+  .score-panel .stars {
+      display:none;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 549px) {
+  .deck {
+      width: 60%;
+      justify-content: space-around;
+    }
+
+  .deck .card{
+    height = 5em;
+    width = 5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .score-panel {
+      text-align: center;
+      width: 350px;
+      margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 660px) {
+  .deck {
+      width: 60%;
+    }
+
+  .deck .card{
+    height = 5em;
+    width = 5rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
